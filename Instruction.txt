@@ -1,0 +1,2 @@
+2) Create new dir `$ mkdir jiskefet`
+3) Run the git clone command in the created dir. `$ git clone https://github.com/SoftwareForScience/jiskefet-deploy.git`

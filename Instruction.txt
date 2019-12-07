@@ -1,2 +1,5 @@
 2) Create new dir `$ mkdir jiskefet`
 3) Run the git clone command in the created dir. `$ git clone https://github.com/SoftwareForScience/jiskefet-deploy.git`
+Run command to install ansible `$ sudo yum install ansible` ( ver 2.4.0.2 )
+ The software requirement of jiskefet-deploy need ansible version 2.5 or higher is required.
+In order to install a later version, run command `$ sudo yum --disablerepo "*" --enablerepo "epel" install ansible` 

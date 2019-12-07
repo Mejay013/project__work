@@ -3,3 +3,6 @@
 Run command to install ansible `$ sudo yum install ansible` ( ver 2.4.0.2 )
  The software requirement of jiskefet-deploy need ansible version 2.5 or higher is required.
 In order to install a later version, run command `$ sudo yum --disablerepo "*" --enablerepo "epel" install ansible` 
+  this comand install the latest version of ansible available on the epel-repository.
+8)Go to the new dir `$ cd. / Jiskefet-deploy`
+9) Run command to make a template copy `$ cp ansible.config.yml.template ansible.config.yml`

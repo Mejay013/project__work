@@ -30,3 +30,7 @@ In order to install a later version, run command `$ sudo yum --disablerepo "*" -
 8)Go to the new dir `$ cd. / Jiskefet-deploy`
 9) Run command to make a template copy `$ cp ansible.config.yml.template ansible.config.yml`
 10) Run command to change in the config file `$ vi ansible.config.yml`
+11) Run command  to change host file `$ vi hosts`
+12) Run command `$ ansible-playbook site.yml`
+14) (IF) Error "ERROR! Attempting to decrypt but no vault secrets found"
+  Run command `$ ansible-playbook site.yml` again

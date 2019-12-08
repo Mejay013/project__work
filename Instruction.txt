@@ -1,3 +1,9 @@
+1) Configure ssh on a newly created machine
+	$ ssh-keygen  -f jiskefet
+	$ cd ~/.ssh
+	$ vi config
+Write:
+"
 ########## Jiskefet ##########
 
 Host jiskefet-api
@@ -6,11 +12,21 @@ Host jiskefet-api
     Port 22
     IdentityFile ~/.ssh/jiskefet
 
+Host jiskefet-db
+    HostName IP_ADDRESS_HERE
+    User root
+    Port 22
+    IdentityFile ~/.ssh/jiskefet
+"
 2) Create new dir `$ mkdir jiskefet`
 3) Run the git clone command in the created dir. `$ git clone https://github.com/SoftwareForScience/jiskefet-deploy.git`
-Run command to install ansible `$ sudo yum install ansible` ( ver 2.4.0.2 )
+4) (IF) Error "no git installed",run command to install git `$ yum install git`
+5) (IF) Error  insufficient permissions, run sudo command `$ sudo yum install git`
+6) Return (4)
+7) Run command to install ansible `$ sudo yum install ansible` ( ver 2.4.0.2 )
  The software requirement of jiskefet-deploy need ansible version 2.5 or higher is required.
-In order to install a later version, run command `$ sudo yum --disablerepo "*" --enablerepo "epel" install ansible` 
+In order to install a later version, run command `$ sudo yum --disablerepo "*" --enablerepo "epel" install ansible` ,
   this comand install the latest version of ansible available on the epel-repository.
 8)Go to the new dir `$ cd. / Jiskefet-deploy`
 9) Run command to make a template copy `$ cp ansible.config.yml.template ansible.config.yml`
+10) Run command to change in the config file `$ vi ansible.config.yml`

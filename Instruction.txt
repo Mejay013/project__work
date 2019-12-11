@@ -30,7 +30,15 @@ In order to install a later version, run command `$ sudo yum --disablerepo "*" -
 8)Go to the new dir `$ cd. / Jiskefet-deploy`
 9) Run command to make a template copy `$ cp ansible.config.yml.template ansible.config.yml`
 10) Run command to change in the config file `$ vi ansible.config.yml`
+========= config file =====
+a)Variable use_local_repository: 'no'
+b)Check URL: 
+	JISKEFET_API: 'https://github.com/SoftwareForScience/jiskefet-api.git'
+	JISKEFET_UI: 'https://github.com/SoftwareForScience/jiskefet-ui.git'
+c) Variable USE_CERN_SSO: 'false'
+All next fields are required
 11) Run command  to change host file `$ vi hosts`
 12) Run command `$ ansible-playbook site.yml`
+
 14) (IF) Error "ERROR! Attempting to decrypt but no vault secrets found"
   Run command `$ ansible-playbook site.yml` again

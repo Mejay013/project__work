@@ -37,8 +37,20 @@ b)Check URL:
 	JISKEFET_UI: 'https://github.com/SoftwareForScience/jiskefet-ui.git'
 c) Variable USE_CERN_SSO: 'false'
 All next fields are required
+d)
+	TYPEORM_HOST: 'FILL_IN_YOUR_HOST_HERE' - ip-address DB server
+	TYPEORM_USERNAME: 'FILL_IN_YOUR_USERNAME_HERE'
+ 	TYPEORM_PASSWORD: 'FILL_IN_YOUR_PASSWORD_HERE'
+ 	TYPEORM_DATABASE: 'FILL_IN_YOUR_DATABASE_HERE' - name DB.
+e)
+jiskefet_oauth_settings:
+ 	CLIENT_ID: 'FILL_IN_YOUR_CLIENT_ID_HERE'
+  	CLIENT_SECRET: 'FILL_IN_YOUR_CLIENT_SECRET_HERE'
+  	AUTH_REDIRECT_URI: 'FILL_IN_YOUR_AUTH_REDIRECT_URI_HERE' -  (URL should end with «/ callback»)
+======================
 11) Run command  to change host file `$ vi hosts`
 12) Run command `$ ansible-playbook site.yml`
-
-14) (IF) Error "ERROR! Attempting to decrypt but no vault secrets found"
-  Run command `$ ansible-playbook site.yml` again
+13) Run commands:
+	`$ npm install`
+	`$ cp ./environments/{YOUR_ENV}.env.template .env`
+	`$ npm run dev`

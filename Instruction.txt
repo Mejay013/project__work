@@ -54,3 +54,5 @@ jiskefet_oauth_settings:
 	`$ npm install`
 	`$ cp ./environments/{YOUR_ENV}.env.template .env`
 	`$ npm run dev`
+14) (IF) Error "ERROR! Attempting to decrypt but no vault secrets found"
+  Run command `$ ansible-playbook site.yml` again

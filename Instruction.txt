@@ -59,8 +59,9 @@ jiskefet_oauth_settings:
 15) (IF) Error "Failed to connect to host via ssh"
   Run command to remove "host_vars" dir `$ rm -rf host_vars/`
   Run command `$ vi ansible.cfg` and delete all lines starting with " vault_* "  
-
-16) (IF) Error "unable to connect to database, check login_user and login_password are correct or ~/.my.cnf has the credentials"
+16) (IF) Error insufficient permission when running task create-jiskefet-user.yml
+  Run sudo comand with the remote-privileged-user `$ ansible-playbook site.yml -K`
+17) (IF) Error "unable to connect to database, check login_user and login_password are correct or ~/.my.cnf has the credentials"
   Run command `$ yum remove mariadb`
   Run command `$ rm -rf /var/lib/mysql`
 =====MariaDB settings ===
@@ -72,9 +73,16 @@ Choose version to our OS adn download: https://downloads.mariadb.org/mariadb/rep
 [mariadb]
 name = MariaDB
 baseurl = http://yum.mariadb.org/10.2/centos7-amd64
-
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
 "
 	$ sudo yum update
 	$ sudo yum install MariaDB-server MariaDB-client
-	e
+	$ sudo systemctl start mariadb
+	$ sudo mysql_upgrade
 	$ sudo mysql_secure_installation
+
+
+
+
+
